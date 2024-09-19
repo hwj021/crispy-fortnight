@@ -7,31 +7,33 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/buttonDisable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="193dp"
-        android:text="Button"
+        android:text="Kliknij mnie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Button
+        android:id="@+id/buttonEnable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="66dp"
+        android:text="Reset"
+        app:layout_constraintStart_toStartOf="@+id/buttonDisable"
+        app:layout_constraintTop_toBottomOf="@+id/buttonDisable" />
+
     <TextView
-        android:id="@+id/dane"
+        android:id="@+id/numer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="18dp"
         android:text="0"
-        app:layout_constraintStart_toStartOf="@+id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/button1" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="49dp"
-        android:text="Reset"
-        app:layout_constraintStart_toStartOf="@+id/button1"
-        app:layout_constraintTop_toBottomOf="@+id/dane" />
+        app:layout_constraintBottom_toTopOf="@+id/buttonEnable"
+        app:layout_constraintStart_toStartOf="@+id/buttonEnable" />
 </androidx.constraintlayout.widget.ConstraintLayout>

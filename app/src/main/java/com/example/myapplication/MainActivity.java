@@ -1,8 +1,6 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -10,29 +8,36 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    public TextView textView;
+    TextView showValue;
+    private Button buttonDisable;
+    private Button buttonEnable;
+    private int numer = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textView = findViewById(R.id.dane);
+        buttonDisable = findViewById(R.id.buttonDisable);
+        buttonEnable = findViewById(R.id.buttonEnable);
+        showValue = (TextView) findViewById(R.id.numer);
 
-        Button button1 = findViewById(R.id.button1);
-        button1.setOnClickListener(new View.OnClickListener() {
+        showValue.setText(Integer.toString(numer));
+
+        buttonDisable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                textView.setText("1");
+                buttonDisable.setEnabled(false);
+                numer++;
+                showValue.setText(Integer.toString(numer));
             }
         });
 
-        Button button2 = findViewById(R.id.button2);
-        button2.setOnClickListener(new View.OnClickListener() {
+        buttonEnable.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView.setText("0");
+                buttonDisable.setEnabled(true);
             }
         });
     }
